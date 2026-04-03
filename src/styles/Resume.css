@@ -1,0 +1,200 @@
+.resume-section {
+  padding: 80px 20px;
+  background-color: #020617;
+  color: white;
+}
+
+.resume-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.resume-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.resume-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.resume-header p {
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+.underline {
+  width: 60px;
+  height: 4px;
+  background: #38bdf8;
+  margin: 15px auto;
+  border-radius: 2px;
+}
+
+/* Layout */
+.resume-content {
+  display: flex;
+  flex-direction: row; /* Desktop */
+  gap: 40px;
+  align-items: center;
+}
+
+/* Visual Preview */
+.resume-visual {
+  flex: 1;
+  width: 100%;
+}
+
+.document-frame {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #1e293b;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.document-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(11, 17, 32, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.document-frame:hover .overlay {
+  opacity: 1;
+}
+
+.overlay a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Action Card */
+.resume-actions {
+  flex: 1;
+  width: 100%;
+}
+
+.action-card {
+  background: #0b1120;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #1e293b;
+  text-align: center;
+}
+
+.icon-box-resume {
+  color: #38bdf8;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.action-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.action-card p {
+  color: #94a3b8;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.button-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.btn-download, .btn-view {
+  padding: 14px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-download {
+  background: #38bdf8;
+  color: #020617;
+}
+
+.btn-view {
+  background: transparent;
+  color: #f8fafc;
+  border: 1px solid #1e293b;
+}
+
+.btn-download:hover { background: #0ea5e9; }
+.btn-view:hover { background: #1e293b; }
+
+.status-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 25px;
+  color: #10b981;
+  font-size: 0.9rem;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .resume-content {
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .resume-visual, .resume-actions {
+    max-width: 600px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .resume-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .action-card {
+    padding: 25px 20px;
+  }
+
+  .action-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .btn-download, .btn-view {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Hide overlay on mobile and make the image clickable directly if needed, 
+     or keep it as is since touch hover is inconsistent */
+  .overlay {
+    background: rgba(11, 17, 32, 0.4);
+    opacity: 1; /* Keep visible on mobile for clarity */
+  }
+}

@@ -1,0 +1,169 @@
+.about-section {
+  padding: 100px 20px;
+  background-color: #020617;
+  color: #f8fafc;
+  scroll-margin-top: 80px;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.about-header h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+}
+
+.underline {
+  width: 50px;
+  height: 4px;
+  background: #38bdf8;
+  margin: 15px auto;
+  border-radius: 2px;
+}
+
+/* Grid Layout */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 30px;
+  align-items: start;
+}
+
+/* Cards Shared Style */
+.bio-card, .education-card, .experience-main {
+  background: #0b1120;
+  border: 1px solid #1e293b;
+  padding: 30px;
+  border-radius: 24px;
+  margin-bottom: 25px;
+}
+
+.card-icon {
+  color: #38bdf8;
+  margin-bottom: 15px;
+}
+
+h2, h3 {
+  color: #f8fafc;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #94a3b8;
+  line-height: 1.7;
+  margin-bottom: 15px;
+}
+
+strong {
+  color: #38bdf8;
+}
+
+/* Education Specific */
+.edu-item h4 {
+  color: #f8fafc;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+/* Experience Specific */
+.exp-header {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 15px;
+}
+
+.blue-icon {
+  color: #38bdf8;
+}
+
+.exp-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.exp-header span {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.exp-list {
+  list-style: none;
+  padding: 0;
+}
+
+.exp-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.check-icon {
+  color: #10b981; /* Success Green */
+  flex-shrink: 0;
+}
+
+/* Certs Section */
+.certs-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.certs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cert-tag {
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* --- MOBILE RESPONSIVE (Every Phone) --- */
+
+@media (max-width: 968px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 60px 15px;
+  }
+
+  .bio-card, .education-card, .experience-main {
+    padding: 20px;
+  }
+
+  .exp-header h3 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cert-tag {
+    width: 100%;
+    text-align: center;
+  }
+}

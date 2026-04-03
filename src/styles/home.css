@@ -1,0 +1,261 @@
+/* --- Home Section Container --- */
+.home {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #020617; /* Deep Midnight Blue */
+  padding: 100px 20px 60px;
+  overflow: hidden;
+  position: relative;
+}
+
+.home-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* --- Left Content: Text & Stats --- */
+.home-content {
+  flex: 1;
+  z-index: 5;
+}
+
+.welcome-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.home-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: #f8fafc;
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+
+.highlight {
+  color: #38bdf8;
+}
+
+.home-content h2 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  color: #94a3b8;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.home-content p {
+  color: #64748b;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 520px;
+  margin-bottom: 40px;
+}
+
+.home-content p strong {
+  color: #f8fafc;
+}
+
+/* --- Buttons --- */
+.home-btns {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 50px;
+}
+
+.btn {
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn.primary {
+  background: #38bdf8;
+  color: #020617;
+}
+
+.btn.primary:hover {
+  background: #7dd3fc;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.4);
+}
+
+.btn.secondary {
+  border: 1px solid #1e293b;
+  color: #f8fafc;
+  background: rgba(30, 41, 59, 0.2);
+}
+
+.btn.secondary:hover {
+  background: #1e293b;
+  transform: translateY(-3px);
+}
+
+/* --- Stats Row --- */
+.home-stats {
+  display: flex;
+  gap: 40px;
+  border-top: 1px solid #1e293b;
+  padding-top: 30px;
+}
+
+.home-stats h3 {
+  font-size: 1.8rem;
+  color: #f8fafc;
+  margin-bottom: 4px;
+  font-weight: 800;
+}
+
+.home-stats p {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+}
+
+/* --- Right Side: Image Section --- */
+.home-image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.image-blob {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(145deg, #38bdf8, #1e293b);
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  overflow: hidden;
+  animation: morph 8s ease-in-out infinite;
+  border: 4px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.image-blob img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+}
+
+/* --- Floating Tech Badges --- */
+.tech-badge {
+  position: absolute;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid #1e293b;
+  color: #f8fafc;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  animation: float 4s ease-in-out infinite;
+  z-index: 6;
+}
+
+.badge-1 { top: 10%; left: 0; animation-delay: 0s; }
+.badge-2 { top: 60%; left: -5%; animation-delay: 1s; }
+.badge-3 { top: 0%; right: 5%; animation-delay: 2s; }
+.badge-4 { bottom: 10%; right: 0; animation-delay: 3s; }
+
+/* --- Animations --- */
+@keyframes morph {
+  0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+  50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* --- RESPONSIVE DESIGN (Fits every phone) --- */
+
+@media (max-width: 1024px) {
+  .home-container {
+    flex-direction: column-reverse; /* Face first, then text */
+    text-align: center;
+    gap: 60px;
+  }
+
+  .home-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .home-content p {
+    margin: 0 auto 40px;
+  }
+
+  .image-blob {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+    padding: 120px 15px 40px;
+  }
+
+  .home-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .home-btns {
+    flex-direction: column; /* Stack buttons on mobile */
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .home-stats {
+    gap: 20px;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
+    justify-content: center;
+  }
+  
+  /* Hide badges on small mobile to keep it clean and avoid horizontal scrolling */
+  .tech-badge {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .home-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .image-blob {
+    width: 260px;
+    height: 260px;
+  }
+
+  .home-stats div {
+    flex: 1 1 40%; /* 2x2 grid for stats on tiny phones */
+  }
+}

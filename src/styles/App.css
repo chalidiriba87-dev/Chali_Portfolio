@@ -1,0 +1,16 @@
+/* App container */
+.App {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+/* Ensure each section has spacing */
+section {
+  scroll-margin-top: 80px; /* offset for sticky navbar */
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
