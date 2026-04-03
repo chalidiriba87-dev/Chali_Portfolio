@@ -1,5 +1,5 @@
 import React from "react";
-import { Layers, Shield, Zap, CheckCircle, Database } from "lucide-react";
+import { Shield, Zap, CheckCircle, Database } from "lucide-react";
 import "../styles/Projects.css";
 
 export default function Projects() {
